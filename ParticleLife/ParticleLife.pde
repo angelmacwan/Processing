@@ -1,3 +1,5 @@
+// todo: make is faster by either creating a shader or try using P3D first
+
 import java.util.ArrayList;
 
 class ParticleLifeSimulator {
@@ -16,10 +18,14 @@ class ParticleLifeSimulator {
     
     ParticleLifeSimulator() {
         particleColors = new float[numParticleTypes];
+        
+        // todo: add better colors
+        // use pre defined color palets and a default color once you run out of indexes..
         for (int i = 0; i < numParticleTypes; i++) {
             particleColors[i] = map(i, 0, numParticleTypes, 0, 255);
         }
-        
+
+        // todo: make this into its own function
         interactionMatrix = new float[numParticleTypes][numParticleTypes];
         for (int i = 0; i < numParticleTypes; i++) {
             for (int j = 0; j < numParticleTypes; j++) {
