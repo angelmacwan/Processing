@@ -168,6 +168,8 @@ void draw() {
     background(0);
     simulator.update();
     simulator.display();
+
+    // better keep this off 
     saveFrame("./images/f-######.png");
 }
 
